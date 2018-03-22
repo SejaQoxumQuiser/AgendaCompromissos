@@ -5,6 +5,6 @@
 #include <string>
 using namespace std;
 int main(){
-    cout<<"asdasd"<<endl;
+    cout<<"alterei"<<endl;
     return 0;
 }
