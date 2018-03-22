@@ -26,13 +26,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    registrar.cpp
+    registrar.cpp \
+    calendariocompromissos.cpp
 
 HEADERS += \
         mainwindow.h \
-    registrar.h
+    registrar.h \
+    calendariocompromissos.h
 
 FORMS += \
         mainwindow.ui \
     registrar.ui \
-    registrar.ui
+    registrar.ui \
+    calendariocompromissos.ui
