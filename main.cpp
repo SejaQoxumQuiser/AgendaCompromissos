@@ -90,11 +90,9 @@ class Ldde{
             atual = atual->getProx();
         }
 
-        if(atual && atual->getValor() != valor)
-            return NULL;
-        //    cout<<"nao encontrado"<<endl;
-
-        return atual;
+        if(atual && atual->valor == valor)
+            return atual;
+        return NULL;
 
     }
     void busca(T valor){
@@ -142,6 +140,15 @@ private:
     string nome,email,cpf,senha;
 
 public:
+    Pessoa(const string &nome, const string &email, const string &cpf, const string &senha) : nome(nome), email(email),
+                                                                                              cpf(cpf), senha(senha) {}
+
+    Pessoa(int id, const string &nome, const string &email, const string &cpf, const string &senha) : id(id),
+                                                                                                      nome(nome),
+                                                                                                      email(email),
+                                                                                                      cpf(cpf),
+                                                                                                      senha(senha) {}
+
     int getId() const {
         return id;
     }
@@ -170,8 +177,39 @@ public:
         return nome == p.nome;
     }
 };
+class Compromisso  {
+private:
+    int id;
+    string titulo, data, local,comentario;
+public:
+
+    int getId() const {
+        return id;
+    }
+
+    const string &getTitulo() const {
+        return titulo;
+    }
+
+    const string &getData() const {
+        return data;
+    }
+
+    const string &getLocal() const {
+        return local;
+    }
+
+    const string &getComentario() const {
+        return comentario;
+    }
+};
+ostream& operator<< (ostream& out, const Compromisso& val){
+    out <<"Id: "<<val.getId()<<" Ttulo: "<<val.getTitulo()<<" Local: "<<val.getLocal()<<" Data: "<<val.getData()<<" Comentário: "<<val.getComentario();
+    return out;
+}
+
 ostream& operator<< (ostream& out, const Pessoa& val){
-    out <<"Id: "<<val.getId()<<"Nome: "<<val.getNome()<<"Email: "<<val.getEmail()<<" CPF: "<<val.getCpf()<<"Senha: "<<val.getSenha();
+    out <<"Id: "<<val.getId()<<" Nome: "<<val.getNome()<<" Email: "<<val.getEmail()<<" CPF: "<<val.getCpf()<<" Senha: "<<val.getSenha();
     return out;
 }
 template <typename T>
@@ -181,6 +219,12 @@ ostream& operator<< (ostream& out, const No<T>* val){
 }
 
 int main(){
-
+    Ldde<Pessoa> lp;
+    lp.insereLista(Pessoa("Joao","joao@asda.com","12341234","12332112321"));
+    Pessoa rem("Joao","","","");
+    lp.insereLista(Pessoa("Jonas","jon@asda.com","12234","1233221"));
+    lp.imprime();
+    lp.removeNo(rem);
+    lp.imprime();
     return 0;
 }
