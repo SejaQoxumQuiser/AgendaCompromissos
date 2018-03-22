@@ -134,17 +134,53 @@ class Ldde{
         }
     }
 };
+class Pessoa{
+
+private:
+    int id;
+
+    string nome,email,cpf,senha;
+
+public:
+    int getId() const {
+        return id;
+    }
+
+    const string &getNome() const {
+        return nome;
+    }
+
+    const string &getEmail() const {
+        return email;
+    }
+
+    const string &getCpf() const {
+        return cpf;
+    }
+
+    const string &getSenha() const {
+        return senha;
+    }
+
+    bool operator<(const Pessoa& p){
+        return nome < p.nome;
+    }
+
+    bool operator==(const Pessoa& p){
+        return nome == p.nome;
+    }
+};
+ostream& operator<< (ostream& out, const Pessoa& val){
+    out <<"Id: "<<val.getId()<<"Nome: "<<val.getNome()<<"Email: "<<val.getEmail()<<" CPF: "<<val.getCpf()<<"Senha: "<<val.getSenha();
+    return out;
+}
+template <typename T>
+ostream& operator<< (ostream& out, const No<T>* val){
+    out <<val->getValor();
+    return out;
+}
+
 int main(){
-    cout<<"adsasdasdas"<<endl;
-    Ldde<int> listaInt;
-
-    listaInt.insereLista(23);
-    listaInt.insereLista(4);
-    listaInt.insereLista(123);
-    listaInt.insereLista(56);
-    listaInt.imprime();
-
-    listaInt.busca(123);
 
     return 0;
 }
