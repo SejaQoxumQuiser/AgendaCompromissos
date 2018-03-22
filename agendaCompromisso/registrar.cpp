@@ -16,10 +16,10 @@ registrar::~registrar()
 
 void registrar::on_pushButton_2_clicked()
 {
-      hide();
- //     calendarioCompromissos calen;
- //   calen.setModal(true);
- //   calen.exec();
+     hide();
+     calendarioCompromissos calen;
+     calen.setModal(true);
+     calen.exec();
 }
 
 void registrar::on_pushButton_clicked()
