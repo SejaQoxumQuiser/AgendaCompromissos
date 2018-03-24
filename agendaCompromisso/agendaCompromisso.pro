@@ -27,15 +27,18 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     registrar.cpp \
-    calendariocompromissos.cpp
+    calendariocompromissos.cpp \
+    registrarcompromisso.cpp
 
 HEADERS += \
         mainwindow.h \
     registrar.h \
-    calendariocompromissos.h
+    calendariocompromissos.h \
+    registrarcompromisso.h
 
 FORMS += \
         mainwindow.ui \
     registrar.ui \
     registrar.ui \
-    calendariocompromissos.ui
+    calendariocompromissos.ui \
+    registrarcompromisso.ui
