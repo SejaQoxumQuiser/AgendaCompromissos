@@ -15,6 +15,13 @@ public:
     explicit calendarioCompromissos(QWidget *parent = 0);
     ~calendarioCompromissos();
 
+private slots:
+    void on_calendarWidget_selectionChanged();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_clicked();
+
 private:
     Ui::calendarioCompromissos *ui;
 };
