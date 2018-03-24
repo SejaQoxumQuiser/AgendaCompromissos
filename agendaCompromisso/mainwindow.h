@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "registrar.h"
 
 namespace Ui {
 class MainWindow;
@@ -18,11 +19,11 @@ public:
 private slots:
     void on_pushButton_2_clicked();
 
-private slots:
     void on_pushButton_clicked();
     
 private:
-    Ui::MainWindow *ui;   
+    Ui::MainWindow *ui;
+    registrar *regis;
 };
 
 #endif // MAINWINDOW_H

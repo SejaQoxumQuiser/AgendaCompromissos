@@ -2,6 +2,7 @@
 #define REGISTRAR_H
 
 #include <QDialog>
+#include "calendariocompromissos.h"
 
 namespace Ui {
 class registrar;
@@ -22,6 +23,7 @@ private slots:
 
 private:
     Ui::registrar *ui;
+    calendarioCompromissos *calendario;
 };
 
 #endif // REGISTRAR_H

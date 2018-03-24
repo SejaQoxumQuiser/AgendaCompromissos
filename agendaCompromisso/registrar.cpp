@@ -1,6 +1,7 @@
 #include "registrar.h"
 #include "ui_registrar.h"
 #include "calendariocompromissos.h"
+#include "mainwindow.h"
 
 registrar::registrar(QWidget *parent) :
     QDialog(parent),
@@ -14,15 +15,14 @@ registrar::~registrar()
     delete ui;
 }
 
-void registrar::on_pushButton_2_clicked()
+void registrar::on_pushButton_2_clicked()//cadastro
 {
      hide();
-     calendarioCompromissos calen;
-     calen.setModal(true);
-     calen.exec();
+     calendario = new calendarioCompromissos(this);
+     calendario->show();
 }
 
-void registrar::on_pushButton_clicked()
+void registrar::on_pushButton_clicked()//voltar
 {
 
 }

@@ -36,7 +36,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>Nome</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -49,7 +49,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>Senha</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
@@ -62,7 +62,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>CPF</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
@@ -75,46 +75,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>200</y>
-     <width>47</width>
-     <height>13</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>TextLabel</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>200</y>
-     <width>82</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>RadioButton</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_2">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>200</y>
-     <width>82</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>RadioButton</string>
+    <string>E-mail</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
