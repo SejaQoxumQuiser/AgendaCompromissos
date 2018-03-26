@@ -28,13 +28,15 @@ SOURCES += \
         mainwindow.cpp \
     registrar.cpp \
     calendariocompromissos.cpp \
-    registrarcompromisso.cpp
+    registrarcompromisso.cpp \
+    bdcontroll.cpp
 
 HEADERS += \
         mainwindow.h \
     registrar.h \
     calendariocompromissos.h \
-    registrarcompromisso.h
+    registrarcompromisso.h \
+    bdcontroll.h
 
 FORMS += \
         mainwindow.ui \
@@ -42,3 +44,9 @@ FORMS += \
     registrar.ui \
     calendariocompromissos.ui \
     registrarcompromisso.ui
+
+
+win32: LIBS += -L$$PWD/../../../../../Desktop/lib/ -llibmysql
+
+INCLUDEPATH += $$PWD/../../../../../Desktop
+DEPENDPATH += $$PWD/../../../../../Desktop

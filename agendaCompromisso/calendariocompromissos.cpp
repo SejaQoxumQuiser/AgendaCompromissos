@@ -3,6 +3,7 @@
 #include "ui_calendariocompromissos.h"
 #include <string>
 #include <QString>
+#include "bdcontroll.h"
 
 
 
@@ -14,6 +15,7 @@ calendarioCompromissos::calendarioCompromissos(QWidget *parent) :
     ui(new Ui::calendarioCompromissos)
 {
     ui->setupUi(this);
+    ui->groupBox->setVisible(false);
 }
 
 calendarioCompromissos::~calendarioCompromissos()
@@ -23,7 +25,7 @@ calendarioCompromissos::~calendarioCompromissos()
 
 void calendarioCompromissos::on_calendarWidget_selectionChanged()
 {
-
+       ui->MES->setText("2132141254");
 }
 
 void calendarioCompromissos::on_pushButton_2_clicked()
@@ -31,19 +33,23 @@ void calendarioCompromissos::on_pushButton_2_clicked()
 
      QDate current = ui->calendar->selectedDate();
 
-     ui->MES->setText(current.toString("dd.MM.yyyy"));
+    // ui->MES->setText(current.toString("dd.MM.yyyy"));
+     ui->groupBox->setVisible(true);
+     ui->dateEdit->setDate(current);
 
-     QString nome = "OASDKOPASKDODS";
-
-     ui->MES->setText(nome);
 
 
 }
 
-void calendarioCompromissos::on_pushButton_clicked()
+
+void calendarioCompromissos::on_pushButton_3_clicked()
 {
-    hide();
-    registrarCompromisso reg;
-    reg.setModal(true);
-    reg.exec();
+    BDcontroll banco;
+    banco.adicionarCompromisso();
+    QString titulo;
+    QDateEdit data;
+    QTimeEdit hora;
+    QString local;
+    QString comentario;
+    ui->groupBox->setVisible(false);
 }
