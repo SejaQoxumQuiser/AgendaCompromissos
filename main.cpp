@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <QApplication>
+#include <QMainWindow>
 using namespace std;
 
 template <typename T>
@@ -218,13 +220,11 @@ ostream& operator<< (ostream& out, const No<T>* val){
     return out;
 }
 
-int main(){
-    Ldde<Pessoa> lp;
-    lp.insereLista(Pessoa("Joao","joao@asda.com","12341234","12332112321"));
-    Pessoa rem("Joao","","","");
-    lp.insereLista(Pessoa("Jonas","jon@asda.com","12234","1233221"));
-    lp.imprime();
-    lp.removeNo(rem);
-    lp.imprime();
-    return 0;
+int main(int argc, char *argv[]){
+
+    QApplication a(argc, argv);
+    QMainWindow w;
+    w.show();
+
+    return a.exec();
 }
