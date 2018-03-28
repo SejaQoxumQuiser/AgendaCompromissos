@@ -4,15 +4,17 @@ project(teste)
 # Find includes in corresponding build directories
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 # Instruct CMake to run moc automatically when needed.
-set(CMAKE_AUTOMOC ON)
+#set(CMAKE_AUTOMOC ON)
 
-#find_package(Qt5Widgets)
+find_package(Qt5Widgets)
 
-#include_directories({Qt5Widgets_INCLUDE_DIRS})
+include_directories({Qt5Widgets_INCLUDE_DIRS})
 
 set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_FILES main.cpp)
 
-#target_link_libraries(main Qt5::Widgets)
 
-add_executable(teste ${SOURCE_FILES})
+add_executable(main main.cpp)
+
+target_link_libraries(main Qt5::Widgets)
+
