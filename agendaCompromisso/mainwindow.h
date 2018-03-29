@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "registrar.h"
+#include "calendariocompromissos.h"
+#include <QSqlRelationalTableModel>
 
 namespace Ui {
 class MainWindow;
@@ -15,6 +17,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    QSqlRelationalTableModel * pessoa;
 
 private slots:
     void on_pushButton_2_clicked();
@@ -24,6 +27,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     registrar *regis;
+    calendarioCompromissos *calendario;
 };
 
 #endif // MAINWINDOW_H

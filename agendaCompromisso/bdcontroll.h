@@ -3,29 +3,33 @@
 #include <QtSql/QtSql>
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
+#include <QObject>
 
 
 
-class BDcontroll
+class BDcontroll:public QObject
 {
+    Q_OBJECT
 public:
-    BDcontroll();
+    explicit BDcontroll(QObject *parent = 0);
+
+    static BDcontroll *obj;
+    static BDcontroll *obj2();
+
+
+    static QSqlDatabase db;
+    static QSqlDatabase db2();
 
     void adicionarCompromisso(){
         
           QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-          db.setHostName("50.116.87.233");
+          db.setHostName("localhost");
           db.setPort(3307);
-          db.setDatabaseName("typr956_agendaDb");
-          db.setUserName("typr956_oxum");
-          db.setPassword("agoravai");
+          db.setDatabaseName("teste");
+          db.setUserName("warned");
+          db.setPassword("23081998");
           db.open();
 
-
-    }
-
-
-    void popularLista(){
 
     }
 };

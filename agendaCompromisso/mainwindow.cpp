@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "registrar.h"
 #include "calendariocompromissos.h"
+#include <bdcontroll.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -25,5 +26,7 @@ void MainWindow::on_pushButton_2_clicked()//cadastro
 
 void MainWindow::on_pushButton_clicked()//login
 {
-
+    hide();
+    calendario = new calendarioCompromissos(this);
+    calendario->show();
 }
