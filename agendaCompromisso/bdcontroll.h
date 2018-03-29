@@ -14,11 +14,11 @@ public:
     void adicionarCompromisso(){
         
           QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-          db.setHostName("db4free.net");
+          db.setHostName("50.116.87.233");
           db.setPort(3307);
-          db.setDatabaseName("vinnys");
-          db.setUserName("vinnys");
-          db.setPassword("35624c");
+          db.setDatabaseName("typr956_agendaDb");
+          db.setUserName("typr956_oxum");
+          db.setPassword("agoravai");
           db.open();
 
 

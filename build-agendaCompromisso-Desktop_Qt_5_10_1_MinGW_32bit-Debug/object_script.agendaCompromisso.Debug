@@ -1,0 +1,12 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\registrar.o
+./debug\calendariocompromissos.o
+./debug\registrarcompromisso.o
+./debug\bdcontroll.o
+./debug\moc_mainwindow.o
+./debug\moc_registrar.o
+./debug\moc_calendariocompromissos.o
+./debug\moc_registrarcompromisso.o
+);

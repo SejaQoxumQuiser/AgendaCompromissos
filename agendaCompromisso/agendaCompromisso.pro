@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -50,3 +50,10 @@ win32: LIBS += -L$$PWD/../../../../../Desktop/lib/ -llibmysql
 
 INCLUDEPATH += $$PWD/../../../../../Desktop
 DEPENDPATH += $$PWD/../../../../../Desktop
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../wamp64/bin/mysql/mysql5.7.14/lib/ -llibmysql
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../wamp64/bin/mysql/mysql5.7.14/lib/ -llibmysqld
+else:unix: LIBS += -L$$PWD/../../../../../../wamp64/bin/mysql/mysql5.7.14/lib/ -llibmysql
+
+INCLUDEPATH += $$PWD/../../../../../../wamp64/bin/mysql/mysql5.7.14
+DEPENDPATH += $$PWD/../../../../../../wamp64/bin/mysql/mysql5.7.14

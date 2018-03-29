@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\registrar.o
+./release\calendariocompromissos.o
+./release\registrarcompromisso.o
+./release\bdcontroll.o
+./release\moc_mainwindow.o
+./release\moc_registrar.o
+./release\moc_calendariocompromissos.o
+./release\moc_registrarcompromisso.o
+);
