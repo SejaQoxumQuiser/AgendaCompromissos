@@ -41,6 +41,33 @@ class BDcontroll{
           qDebug() << query.exec();
           qDebug() << query.lastError();
 
+}
+    void adicionarRegistro(QString Nome, QString Senha, QString CPF, QString email){
+        QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+        db.setHostName("tyrprint.com");
+        db.setPort(3306);
+        db.setDatabaseName("tyrpr956_agendaDb");
+        db.setUserName("tyrpr956_oxum");
+        db.setPassword("agoravai");
+
+        if(db.open()){
+            qDebug() << "Conectou";
+        }
+        else{
+            qDebug() << "Falhou";
+
+        }
+
+          QSqlQuery query;
+          query.prepare("INSERT INTO Registro (Nome, Senha, CPF, email) VALUES (:Nome, :Senha, :CPF, :email)");
+          query.bindValue(":Nome", Nome);
+          query.bindValue(":Senha", Senha);
+          query.bindValue(":CPF", CPF);
+          query.bindValue(":email", email);
+
+          qDebug() << query.exec();
+          qDebug() << query.lastError();
+
     }
 
     void carregarLista(){
