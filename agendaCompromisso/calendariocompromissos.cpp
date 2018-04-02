@@ -4,6 +4,8 @@
 #include <string>
 #include <QString>
 #include "bdcontroll.h"
+#include <QTime>
+
 
 
 
@@ -36,20 +38,17 @@ void calendarioCompromissos::on_pushButton_2_clicked()
     // ui->MES->setText(current.toString("dd.MM.yyyy"));
      ui->groupBox->setVisible(true);
      ui->dateEdit->setDate(current);
-
-
-
+     ui->timeEdit->setTime(QTime::currentTime());
 }
-
 
 void calendarioCompromissos::on_pushButton_3_clicked()
 {
     BDcontroll banco;
-    banco.adicionarCompromisso();
-    QString titulo;
-    QDateEdit data;
-    QTimeEdit hora;
-    QString local;
-    QString comentario;
+    QString titulo = ui->lineEdit->text();
+    QString data = ui->dateEdit->date().toString("dd/MM/yyyy");
+    QString hora = ui->timeEdit->time().toString("h.m ap");
+    QString local = ui->lineEdit_2->text();
+    QString comentario = ui->lineEdit_3->text();
+    banco.adicionarCompromisso(titulo, local, comentario, data, hora);
     ui->groupBox->setVisible(false);
 }

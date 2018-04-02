@@ -4,33 +4,46 @@
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
 #include <QObject>
+#include <QDebug>
+#include <QDateEdit>
+#include <QTime>
+#include <QTimeEdit>
 
+class BDcontroll{
+   public:
+    BDcontroll();
 
+    void adicionarCompromisso(QString titulo, QString local, QString comentario, QString data, QString hora){
 
-class BDcontroll:public QObject
-{
-    Q_OBJECT
-public:
-    explicit BDcontroll(QObject *parent = 0);
-
-    static BDcontroll *obj;
-    static BDcontroll *obj2();
-
-
-    static QSqlDatabase db;
-    static QSqlDatabase db2();
-
-    void adicionarCompromisso(){
-        
           QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-          db.setHostName("localhost");
-          db.setPort(3307);
-          db.setDatabaseName("teste");
-          db.setUserName("warned");
-          db.setPassword("23081998");
-          db.open();
+          db.setHostName("tyrprint.com");
+          db.setPort(3306);
+          db.setDatabaseName("tyrpr956_agendaDb");
+          db.setUserName("tyrpr956_oxum");
+          db.setPassword("agoravai");
 
+          if(db.open()){
+              qDebug() << "Conectou";
+          }
+          else{
+              qDebug() << "Falhou";
 
+          }
+
+          QSqlQuery query;
+          query.prepare("INSERT INTO compromisso (titulo, data, local, hora, comentario) VALUES (:titulo, :data, :local, :hora, :comentario)");
+          query.bindValue(":titulo", titulo);
+          query.bindValue(":data", data);
+          query.bindValue(":local", local);
+          query.bindValue(":hora", hora);
+          query.bindValue(":comentario", comentario);
+
+          qDebug() << query.exec();
+          qDebug() << query.lastError();
+
+    }
+
+    void carregarLista(){
     }
 };
 
