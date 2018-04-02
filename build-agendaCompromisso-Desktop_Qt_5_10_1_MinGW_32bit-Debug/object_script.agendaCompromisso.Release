@@ -9,5 +9,4 @@ INPUT(
 ./release\moc_registrar.o
 ./release\moc_calendariocompromissos.o
 ./release\moc_registrarcompromisso.o
-./release\moc_bdcontroll.o
 );

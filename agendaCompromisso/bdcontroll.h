@@ -9,13 +9,17 @@
 #include <QTime>
 #include <QTimeEdit>
 
+namespace Ui {
+    class Dialog;
+}
 class BDcontroll{
    public:
     BDcontroll();
 
+
     void adicionarCompromisso(QString titulo, QString local, QString comentario, QString data, QString hora){
 
-          QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+
           db.setHostName("tyrprint.com");
           db.setPort(3306);
           db.setDatabaseName("tyrpr956_agendaDb");
@@ -30,7 +34,6 @@ class BDcontroll{
 
           }
 
-          QSqlQuery query;
           query.prepare("INSERT INTO compromisso (titulo, data, local, hora, comentario) VALUES (:titulo, :data, :local, :hora, :comentario)");
           query.bindValue(":titulo", titulo);
           query.bindValue(":data", data);
@@ -43,7 +46,7 @@ class BDcontroll{
 
 }
     void adicionarRegistro(QString Nome, QString Senha, QString CPF, QString email){
-        QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+
         db.setHostName("tyrprint.com");
         db.setPort(3306);
         db.setDatabaseName("tyrpr956_agendaDb");
@@ -58,7 +61,7 @@ class BDcontroll{
 
         }
 
-          QSqlQuery query;
+
           query.prepare("INSERT INTO Registro (Nome, Senha, CPF, email) VALUES (:Nome, :Senha, :CPF, :email)");
           query.bindValue(":Nome", Nome);
           query.bindValue(":Senha", Senha);
@@ -72,6 +75,12 @@ class BDcontroll{
 
     void carregarLista(){
     }
+
+
+private:
+    Ui::Dialog *ui;
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+    QSqlQuery query;
 };
 
 #endif // BDCONTROLL_H

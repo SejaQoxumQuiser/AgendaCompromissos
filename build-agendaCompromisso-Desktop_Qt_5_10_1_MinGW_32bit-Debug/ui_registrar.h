@@ -68,6 +68,7 @@ public:
         lineEdit_2 = new QLineEdit(registrar);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(90, 110, 113, 20));
+        lineEdit_2->setEchoMode(QLineEdit::Password);
         lineEdit_3 = new QLineEdit(registrar);
         lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
         lineEdit_3->setGeometry(QRect(90, 140, 113, 20));
