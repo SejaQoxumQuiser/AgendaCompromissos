@@ -46,6 +46,7 @@ void MainWindow::on_pushButton_clicked()//login
         qDebug () << "conectou";
 
     QSqlQuery qry;
+<<<<<<< HEAD
     qry.prepare("SELECT senha FROM Registro WHERE email = ?");
     qry.addBindValue(name);
     qry.exec();
@@ -53,6 +54,12 @@ void MainWindow::on_pushButton_clicked()//login
     qDebug () << qry.value(0).toString();
           qry.first();
             if (qry.value(0).toString() == pasw){
+=======
+    if(qry.exec("SELECT Nome, Senha FROM typr956_agendaDb.Registro WHERE Nome=\'" + name +
+                "\' AND Senha=\'" + pasw +"'\'" ))
+    {
+        if(qry.next()){
+>>>>>>> parent of 0eb8d2c... Adicionando e mostrando os compromisso
             QString msg = "Login realisado com sucesso!!";
             QMessageBox::warning(this,"Login was Sucessful",msg);
             hide();
