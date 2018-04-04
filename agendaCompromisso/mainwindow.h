@@ -28,6 +28,7 @@ private:
     Ui::MainWindow *ui;
     registrar *regis;
     calendarioCompromissos *calendario;
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
 };
 
 #endif // MAINWINDOW_H

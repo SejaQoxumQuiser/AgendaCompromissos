@@ -70,10 +70,10 @@ bool ldde::remover(QString T){
 void ldde::imprimir(){
     No* atual = primeiro;
     while(atual){
-        qDebug() << primeiro->valor.titulo;
-        qDebug() << primeiro->valor.local;
-        qDebug() << primeiro->valor.data;
-        qDebug() << primeiro->valor.hora;
+        qDebug() << atual->valor.titulo;
+        qDebug() << atual->valor.local;
+        qDebug() << atual->valor.data;
+        qDebug() << atual->valor.hora;
         atual = atual->prox;
     }
 }

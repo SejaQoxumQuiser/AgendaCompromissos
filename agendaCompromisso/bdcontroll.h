@@ -95,8 +95,7 @@ class BDcontroll{
             //QString comentario = query.value(4).toString();
             compromisso meuCompromisso(titulo, data, local, hora);
             //qDebug() << titulo << data << local << hora ;
-            Lista.inserir(meuCompromisso);
-            Lista.imprimir();
+            Lista.inserir(meuCompromisso);            
         }
     }
 
