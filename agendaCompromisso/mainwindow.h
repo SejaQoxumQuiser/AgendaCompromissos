@@ -6,6 +6,7 @@
 #include "calendariocompromissos.h"
 #include <QSqlRelationalTableModel>
 
+
 namespace Ui {
 class MainWindow;
 }

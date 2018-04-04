@@ -74,7 +74,7 @@ class BDcontroll{
     }
 
     void carregarLista(){
-<<<<<<< HEAD
+
 
         qDebug() << "CARREGANDO LISTA";
         db.setHostName("tyrprint.com");
@@ -95,8 +95,7 @@ class BDcontroll{
             //qDebug() << titulo << data << local << hora ;
             Lista.inserir(meuCompromisso);            
         }
-=======
->>>>>>> parent of 0eb8d2c... Adicionando e mostrando os compromisso
+
     }
 
 

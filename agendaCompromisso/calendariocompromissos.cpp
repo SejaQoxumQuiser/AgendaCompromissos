@@ -41,6 +41,7 @@ void calendarioCompromissos::on_pushButton_2_clicked()
      ui->timeEdit->setTime(QTime::currentTime());
 }
 
+
 void calendarioCompromissos::on_pushButton_3_clicked()
 {
     BDcontroll banco;

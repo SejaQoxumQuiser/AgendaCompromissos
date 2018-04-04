@@ -7,6 +7,7 @@ namespace Ui {
 class calendarioCompromissos;
 }
 
+
 class calendarioCompromissos : public QDialog
 {
     Q_OBJECT

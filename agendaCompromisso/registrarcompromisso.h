@@ -7,6 +7,7 @@ namespace Ui {
 class registrarCompromisso;
 }
 
+
 class registrarCompromisso : public QDialog
 {
     Q_OBJECT

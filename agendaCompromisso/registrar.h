@@ -13,6 +13,7 @@ class registrar : public QDialog
 {
     Q_OBJECT
 
+
 public:
     explicit registrar(QWidget *parent = 0);
     ~registrar();

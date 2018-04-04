@@ -15,6 +15,7 @@ registrarCompromisso::~registrarCompromisso()
     delete ui;
 }
 
+
 void registrarCompromisso::on_pushButton_clicked()
 {
 
