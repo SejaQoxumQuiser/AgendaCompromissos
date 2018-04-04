@@ -34,8 +34,8 @@ void MainWindow::on_pushButton_clicked()//login
     pasw = ui->senha->text();
 
     QSqlQuery qry;
-    if(qry.exec("SELECT Nome, Senha FROM typr956_agendaDb.Registro WHERE Nome=\'" + name +
-                "\' AND Senha=\'" + pasw +"'\'" ))
+   // if(qry.exec("SELECT Nome, Senha, Role FROM Registro WHERE Nome=\'" + name + 
+              //  "\' AND Senha=\'" + pasw +"'\'" )) // arrumar
     {
         if(qry.next()){
             QString msg = "Login realisado com sucesso!!";

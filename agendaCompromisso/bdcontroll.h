@@ -8,6 +8,9 @@
 #include <QDateEdit>
 #include <QTime>
 #include <QTimeEdit>
+#include "ldde.h"
+#include "compromisso.h"
+
 
 namespace Ui {
     class Dialog;
@@ -15,7 +18,7 @@ namespace Ui {
 class BDcontroll{
    public:
     BDcontroll();
-
+    ldde Lista;
 
     void adicionarCompromisso(QString titulo, QString local, QString comentario, QString data, QString hora){
 
@@ -74,6 +77,27 @@ class BDcontroll{
     }
 
     void carregarLista(){
+
+        qDebug() << "CARREGANDO LISTA";
+        db.setHostName("tyrprint.com");
+        db.setPort(3306);
+        db.setDatabaseName("tyrpr956_agendaDb");
+        db.setUserName("tyrpr956_oxum");
+        db.setPassword("agoravai");
+        db.open();
+
+        query.exec("SELECT titulo, data, local, hora FROM compromisso");
+        while (query.next()) {
+            QString titulo = query.value(0).toString();
+            QString data = query.value(1).toString();
+            QString local = query.value(2).toString();
+            QString hora = query.value(3).toString();
+            //QString comentario = query.value(4).toString();
+            compromisso meuCompromisso(titulo, data, local, hora);
+            //qDebug() << titulo << data << local << hora ;
+            Lista.inserir(meuCompromisso);
+            Lista.imprimir();
+        }
     }
 
 
