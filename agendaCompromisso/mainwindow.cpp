@@ -7,12 +7,15 @@
 #include <QDebug>
 #include <QMessageBox>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <QSqlDatabase>
 #include "bdcontroll.h"
 #include <cstdlib>
 #include <iostream>
 
 
+=======
+>>>>>>> parent of a5a642c... Login funcionando
 =======
 >>>>>>> parent of a5a642c... Login funcionando
 
@@ -44,6 +47,7 @@ void MainWindow::on_pushButton_clicked()//login
 
     QSqlQuery qry;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     qry.prepare("SELECT senha FROM Registro WHERE email = ?");
     qry.addBindValue(name);
@@ -65,16 +69,22 @@ void MainWindow::on_pushButton_clicked()//login
 >>>>>>> f75f4c17b59da79a3d717e8cf7e5f8e808633521
 
 =======
+=======
+>>>>>>> parent of a5a642c... Login funcionando
    // if(qry.exec("SELECT Nome, Senha, Role FROM Registro WHERE Nome=\'" + name + 
               //  "\' AND Senha=\'" + pasw +"'\'" )) // arrumar
     {
         if(qry.next()){
+<<<<<<< HEAD
+>>>>>>> parent of a5a642c... Login funcionando
+=======
 >>>>>>> parent of a5a642c... Login funcionando
             QString msg = "Login realisado com sucesso!!";
             QMessageBox::warning(this,"Login was Sucessful",msg);
             hide();
             calendario = new calendarioCompromissos(this);
             calendario->show();
+<<<<<<< HEAD
 <<<<<<< HEAD
           }
 
@@ -93,15 +103,26 @@ void MainWindow::on_pushButton_clicked()//login
 }
 =======
 
+=======
+
+>>>>>>> parent of a5a642c... Login funcionando
         }else{
             QString msg = "Tente de novo";
             QMessageBox::warning(this,"Login ou Senha errado",msg);
             ui->login->setText("");
             ui->senha->setText("");
         }
+<<<<<<< HEAD
+=======
 
     }
 >>>>>>> parent of a5a642c... Login funcionando
 
+    }
+>>>>>>> parent of a5a642c... Login funcionando
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> parent of a5a642c... Login funcionando
 }
