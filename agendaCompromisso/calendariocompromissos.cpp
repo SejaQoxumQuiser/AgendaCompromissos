@@ -31,7 +31,7 @@ void calendarioCompromissos::on_pushButton_2_clicked()
 
      QDate current = ui->calendar->selectedDate();
 
-    // ui->MES->setText(current.toString("dd.MM.yyyy"));
+     ui->MES->setText(current.toString("dd.MM.yyyy"));
      ui->groupBox->setVisible(true);
      ui->dateEdit->setDate(current);
      ui->timeEdit->setTime(QTime::currentTime());
