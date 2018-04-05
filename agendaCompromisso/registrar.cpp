@@ -36,6 +36,7 @@ void registrar::on_pushButton_2_clicked()//cadastro
 
 }
 
+
 void registrar::on_pushButton_clicked()//voltar
 {
 

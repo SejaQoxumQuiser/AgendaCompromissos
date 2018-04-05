@@ -29,21 +29,14 @@ SOURCES += \
     registrar.cpp \
     calendariocompromissos.cpp \
     registrarcompromisso.cpp \
-    bdcontroll.cpp \
-    no.cpp \
-    compromisso.cpp \
-    ldde.cpp
+    bdcontroll.cpp
 
 HEADERS += \
         mainwindow.h \
     registrar.h \
     calendariocompromissos.h \
     registrarcompromisso.h \
-    bdcontroll.h \
-    no.h \
-    compromisso.h \
-    ldde.h
-
+    bdcontroll.h
 
 FORMS += \
         mainwindow.ui \

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1112</width>
+    <width>916</width>
     <height>264</height>
    </rect>
   </property>
@@ -23,6 +23,32 @@
     </rect>
    </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>20</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>DIA</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="MES">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>70</y>
+     <width>151</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
@@ -36,13 +62,23 @@
     <string>Criar Evento</string>
    </property>
   </widget>
+  <widget class="QListView" name="listView">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>10</y>
+     <width>241</width>
+     <height>241</height>
+    </rect>
+   </property>
+  </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="enabled">
     <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
-     <x>730</x>
+     <x>590</x>
      <y>10</y>
      <width>321</width>
      <height>251</height>
@@ -183,18 +219,10 @@
     </property>
    </widget>
   </widget>
-  <widget class="QListWidget" name="listWidget">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>10</y>
-     <width>391</width>
-     <height>241</height>
-    </rect>
-   </property>
-  </widget>
-  <zorder>listWidget</zorder>
+  <zorder>listView</zorder>
   <zorder>calendar</zorder>
+  <zorder>label</zorder>
+  <zorder>MES</zorder>
   <zorder>pushButton_2</zorder>
   <zorder>groupBox</zorder>
  </widget>

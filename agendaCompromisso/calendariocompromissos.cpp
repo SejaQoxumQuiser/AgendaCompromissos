@@ -8,6 +8,11 @@
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> f75f4c17b59da79a3d717e8cf7e5f8e808633521
 using namespace std;
 
 calendarioCompromissos::calendarioCompromissos(QWidget *parent) :
@@ -15,14 +20,7 @@ calendarioCompromissos::calendarioCompromissos(QWidget *parent) :
     ui(new Ui::calendarioCompromissos)
 {
     ui->setupUi(this);
-    BDcontroll banco;
-    banco.carregarLista();
     ui->groupBox->setVisible(false);
-    No* atual = banco.Lista.primeiro;
-    while(atual){
-        ui->listWidget->addItem(atual->valor.titulo + ' ' + atual->valor.local + ' ' + atual->valor.data +' '+ atual->valor.hora);
-        atual = atual->prox;
-    }
 }
 
 calendarioCompromissos::~calendarioCompromissos()
@@ -30,6 +28,10 @@ calendarioCompromissos::~calendarioCompromissos()
     delete ui;
 }
 
+void calendarioCompromissos::on_calendarWidget_selectionChanged()
+{
+       ui->MES->setText("2132141254");
+}
 
 void calendarioCompromissos::on_pushButton_2_clicked()
 {
@@ -41,6 +43,7 @@ void calendarioCompromissos::on_pushButton_2_clicked()
      ui->dateEdit->setDate(current);
      ui->timeEdit->setTime(QTime::currentTime());
 }
+
 
 void calendarioCompromissos::on_pushButton_3_clicked()
 {

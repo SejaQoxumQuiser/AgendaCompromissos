@@ -50,26 +50,45 @@ void MainWindow::on_pushButton_clicked()//login
         qDebug () << "conectou";
 
     QSqlQuery qry;
+
     qry.prepare("SELECT senha FROM Registro WHERE email = ?");
     qry.addBindValue(name);
     qry.exec();
+<<<<<<< HEAD
     if(name == "test" && pasw == "teste")//name == ? && senha == ?
     {
     qDebug () << qry.value(0).toString();
           qry.first();
+=======
+
+
+
+    if(name == "test" && pasw == "test"){
+    qDebug () << qry.value(0).toString();
+        qry.first();
+
+        if(qry.next()){
+>>>>>>> f75f4c17b59da79a3d717e8cf7e5f8e808633521
 
             QString msg = "Login realisado com sucesso!!";
             QMessageBox::warning(this,"Login was Sucessful",msg);
             hide();
             calendario = new calendarioCompromissos(this);
             calendario->show();
-          }else{
+          }
+
+        else{
                 QString msg = "Tente de novo";
                 QMessageBox::warning(this,"Login ou Senha errado",msg);
                 ui->login->setText("");
                 ui->senha->setText("");
 
+<<<<<<< HEAD
       }
+=======
+    }
+  }
+>>>>>>> f75f4c17b59da79a3d717e8cf7e5f8e808633521
 }
 
 

@@ -8,9 +8,6 @@
 #include <QDateEdit>
 #include <QTime>
 #include <QTimeEdit>
-#include "ldde.h"
-#include "compromisso.h"
-
 
 
 
@@ -20,7 +17,7 @@ namespace Ui {
 class BDcontroll{
    public:
     BDcontroll();
-    ldde Lista;
+
 
     void adicionarCompromisso(QString titulo, QString local, QString comentario, QString data, QString hora){
 
@@ -80,6 +77,7 @@ class BDcontroll{
 
     void carregarLista(){
 
+
         qDebug() << "CARREGANDO LISTA";
         db.setHostName("tyrprint.com");
         db.setPort(3306);
@@ -99,6 +97,7 @@ class BDcontroll{
             //qDebug() << titulo << data << local << hora ;
             Lista.inserir(meuCompromisso);            
         }
+
     }
 
 
