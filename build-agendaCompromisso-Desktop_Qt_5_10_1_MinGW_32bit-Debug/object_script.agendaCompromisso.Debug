@@ -5,6 +5,9 @@ INPUT(
 ./debug\calendariocompromissos.o
 ./debug\registrarcompromisso.o
 ./debug\bdcontroll.o
+./debug\no.o
+./debug\compromisso.o
+./debug\ldde.o
 ./debug\moc_mainwindow.o
 ./debug\moc_registrar.o
 ./debug\moc_calendariocompromissos.o

@@ -1,6 +1,8 @@
 #include "compromisso.h"
 
 
+
+
 compromisso::compromisso(){
     compromisso::data = "";
     compromisso::titulo = "";

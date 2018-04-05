@@ -5,6 +5,9 @@ INPUT(
 ./release\calendariocompromissos.o
 ./release\registrarcompromisso.o
 ./release\bdcontroll.o
+./release\no.o
+./release\compromisso.o
+./release\ldde.o
 ./release\moc_mainwindow.o
 ./release\moc_registrar.o
 ./release\moc_calendariocompromissos.o

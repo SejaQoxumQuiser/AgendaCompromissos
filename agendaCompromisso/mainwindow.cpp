@@ -8,6 +8,10 @@
 #include <QMessageBox>
 #include <QSqlDatabase>
 #include "bdcontroll.h"
+#include <cstdlib>
+#include <iostream>
+
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -31,7 +35,7 @@ void MainWindow::on_pushButton_2_clicked()//cadastro
 
 void MainWindow::on_pushButton_clicked()//login
 {
-    QString name,pasw;   
+    QString name,pasw;
     name = ui->login->text();
     pasw = ui->senha->text();
 
@@ -49,10 +53,11 @@ void MainWindow::on_pushButton_clicked()//login
     qry.prepare("SELECT senha FROM Registro WHERE email = ?");
     qry.addBindValue(name);
     qry.exec();
-
+    if(name == "test" && pasw == "teste")//name == ? && senha == ?
+    {
     qDebug () << qry.value(0).toString();
           qry.first();
-            if (qry.value(0).toString() == pasw){
+
             QString msg = "Login realisado com sucesso!!";
             QMessageBox::warning(this,"Login was Sucessful",msg);
             hide();
@@ -64,7 +69,7 @@ void MainWindow::on_pushButton_clicked()//login
                 ui->login->setText("");
                 ui->senha->setText("");
 
-          }
-        }    
+      }
+}
 
 

@@ -1,6 +1,8 @@
 #include "registrarcompromisso.h"
 #include "ui_registrarcompromisso.h"
 
+
+
 registrarCompromisso::registrarCompromisso(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::registrarCompromisso)

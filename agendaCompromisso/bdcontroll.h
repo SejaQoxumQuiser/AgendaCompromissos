@@ -12,6 +12,8 @@
 #include "compromisso.h"
 
 
+
+
 namespace Ui {
     class Dialog;
 }

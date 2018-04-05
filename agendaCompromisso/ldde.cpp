@@ -1,6 +1,8 @@
 #include "ldde.h"
 #include <QDebug>
 
+
+// chamando
 ldde::ldde()
 {
     ldde::n = 0;

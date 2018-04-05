@@ -8,6 +8,8 @@
 #include <QTime>
 
 
+
+
 registrar::registrar(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::registrar)

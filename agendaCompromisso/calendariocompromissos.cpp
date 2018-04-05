@@ -6,6 +6,8 @@
 #include "bdcontroll.h"
 #include <QTime>
 
+
+
 using namespace std;
 
 calendarioCompromissos::calendarioCompromissos(QWidget *parent) :

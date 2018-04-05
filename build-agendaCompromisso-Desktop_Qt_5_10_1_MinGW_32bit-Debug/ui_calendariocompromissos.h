@@ -20,7 +20,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QListView>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTimeEdit>
 
@@ -30,10 +30,7 @@ class Ui_calendarioCompromissos
 {
 public:
     QCalendarWidget *calendar;
-    QLabel *label;
-    QLabel *MES;
     QPushButton *pushButton_2;
-    QListView *listView;
     QGroupBox *groupBox;
     QLineEdit *lineEdit_2;
     QDateEdit *dateEdit;
@@ -46,31 +43,23 @@ public:
     QLabel *label_5;
     QTimeEdit *timeEdit;
     QLabel *label_3;
+    QListWidget *listWidget;
 
     void setupUi(QDialog *calendarioCompromissos)
     {
         if (calendarioCompromissos->objectName().isEmpty())
             calendarioCompromissos->setObjectName(QStringLiteral("calendarioCompromissos"));
-        calendarioCompromissos->resize(916, 264);
+        calendarioCompromissos->resize(1112, 264);
         calendar = new QCalendarWidget(calendarioCompromissos);
         calendar->setObjectName(QStringLiteral("calendar"));
         calendar->setGeometry(QRect(20, 30, 296, 183));
-        label = new QLabel(calendarioCompromissos);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(440, 20, 47, 13));
-        MES = new QLabel(calendarioCompromissos);
-        MES->setObjectName(QStringLiteral("MES"));
-        MES->setGeometry(QRect(380, 70, 151, 16));
         pushButton_2 = new QPushButton(calendarioCompromissos);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(120, 220, 75, 23));
-        listView = new QListView(calendarioCompromissos);
-        listView->setObjectName(QStringLiteral("listView"));
-        listView->setGeometry(QRect(340, 10, 241, 241));
         groupBox = new QGroupBox(calendarioCompromissos);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setEnabled(true);
-        groupBox->setGeometry(QRect(590, 10, 321, 251));
+        groupBox->setGeometry(QRect(730, 10, 321, 251));
         lineEdit_2 = new QLineEdit(groupBox);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(60, 110, 113, 20));
@@ -105,10 +94,11 @@ public:
         label_3 = new QLabel(groupBox);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(20, 50, 47, 13));
-        listView->raise();
+        listWidget = new QListWidget(calendarioCompromissos);
+        listWidget->setObjectName(QStringLiteral("listWidget"));
+        listWidget->setGeometry(QRect(330, 10, 391, 241));
+        listWidget->raise();
         calendar->raise();
-        label->raise();
-        MES->raise();
         pushButton_2->raise();
         groupBox->raise();
 
@@ -120,8 +110,6 @@ public:
     void retranslateUi(QDialog *calendarioCompromissos)
     {
         calendarioCompromissos->setWindowTitle(QApplication::translate("calendarioCompromissos", "Dialog", nullptr));
-        label->setText(QApplication::translate("calendarioCompromissos", "DIA", nullptr));
-        MES->setText(QString());
         pushButton_2->setText(QApplication::translate("calendarioCompromissos", "Criar Evento", nullptr));
         groupBox->setTitle(QApplication::translate("calendarioCompromissos", "Registrar compromisso", nullptr));
         label_6->setText(QApplication::translate("calendarioCompromissos", "Hora", nullptr));

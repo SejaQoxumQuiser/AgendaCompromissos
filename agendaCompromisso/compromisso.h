@@ -4,10 +4,12 @@
 #include <QString>
 
 
+
+
 class compromisso
 {
 private:
-
+ //messias
 
 public:
     QString titulo, data, local, hora;

@@ -5,6 +5,8 @@
 #include "calendariocompromissos.h"
 
 
+
+
 namespace Ui {
 class registrar;
 }
