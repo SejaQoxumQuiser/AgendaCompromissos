@@ -6,12 +6,15 @@
 #include <QString>
 #include <QDebug>
 #include <QMessageBox>
+<<<<<<< HEAD
 #include <QSqlDatabase>
 #include "bdcontroll.h"
 #include <cstdlib>
 #include <iostream>
 
 
+=======
+>>>>>>> parent of a5a642c... Login funcionando
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -39,17 +42,8 @@ void MainWindow::on_pushButton_clicked()//login
     name = ui->login->text();
     pasw = ui->senha->text();
 
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("tyrprint.com");
-    db.setPort(3306);
-    db.setDatabaseName("tyrpr956_agendaDb");
-    db.setUserName("tyrpr956_oxum");
-    db.setPassword("agoravai");
-
-    if (db.open())
-        qDebug () << "conectou";
-
     QSqlQuery qry;
+<<<<<<< HEAD
 
     qry.prepare("SELECT senha FROM Registro WHERE email = ?");
     qry.addBindValue(name);
@@ -70,11 +64,18 @@ void MainWindow::on_pushButton_clicked()//login
         if(qry.next()){
 >>>>>>> f75f4c17b59da79a3d717e8cf7e5f8e808633521
 
+=======
+   // if(qry.exec("SELECT Nome, Senha, Role FROM Registro WHERE Nome=\'" + name + 
+              //  "\' AND Senha=\'" + pasw +"'\'" )) // arrumar
+    {
+        if(qry.next()){
+>>>>>>> parent of a5a642c... Login funcionando
             QString msg = "Login realisado com sucesso!!";
             QMessageBox::warning(this,"Login was Sucessful",msg);
             hide();
             calendario = new calendarioCompromissos(this);
             calendario->show();
+<<<<<<< HEAD
           }
 
         else{
@@ -90,5 +91,17 @@ void MainWindow::on_pushButton_clicked()//login
   }
 >>>>>>> f75f4c17b59da79a3d717e8cf7e5f8e808633521
 }
+=======
+
+        }else{
+            QString msg = "Tente de novo";
+            QMessageBox::warning(this,"Login ou Senha errado",msg);
+            ui->login->setText("");
+            ui->senha->setText("");
+        }
+
+    }
+>>>>>>> parent of a5a642c... Login funcionando
 
 
+}
