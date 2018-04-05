@@ -8,6 +8,8 @@
 #include <QDateEdit>
 #include <QTime>
 #include <QTimeEdit>
+#include "compromisso.h"
+
 
 
 
