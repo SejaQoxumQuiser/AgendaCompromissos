@@ -21,35 +21,7 @@ class BDcontroll{
     BDcontroll();
     ldde Lista;
 
-    void adicionarCompromisso(QString titulo, QString local, QString comentario, QString data, QString hora){
-
-
-          db.setHostName("tyrprint.com");
-          db.setPort(3306);
-          db.setDatabaseName("tyrpr956_agendaDb");
-          db.setUserName("tyrpr956_oxum");
-          db.setPassword("agoravai");
-
-          if(db.open()){
-              qDebug() << "Conectou";
-          }
-          else{
-              qDebug() << "Falhou";
-
-          }
-
-          query.prepare("INSERT INTO compromisso (titulo, data, local, hora, comentario) VALUES (:titulo, :data, :local, :hora, :comentario)");
-          query.bindValue(":titulo", titulo);
-          query.bindValue(":data", data);
-          query.bindValue(":local", local);
-          query.bindValue(":hora", hora);
-          query.bindValue(":comentario", comentario);
-
-          qDebug() << query.exec();
-          qDebug() << query.lastError();
-
-}
-    void adicionarRegistro(QString Nome, QString Senha, QString CPF, QString email){
+    void conectar(){
 
         db.setHostName("tyrprint.com");
         db.setPort(3306);
@@ -65,6 +37,26 @@ class BDcontroll{
 
         }
 
+    }
+
+    void adicionarCompromisso(QString titulo, QString local, QString comentario, QString data, QString hora){
+
+          conectar();
+
+          query.prepare("INSERT INTO compromisso (titulo, data, local, hora, comentario) VALUES (:titulo, :data, :local, :hora, :comentario)");
+          query.bindValue(":titulo", titulo);
+          query.bindValue(":data", data);
+          query.bindValue(":local", local);
+          query.bindValue(":hora", hora);
+          query.bindValue(":comentario", comentario);
+
+          qDebug() << query.exec();
+          qDebug() << query.lastError();
+
+}
+    void adicionarRegistro(QString Nome, QString Senha, QString CPF, QString email){
+
+          conectar();
 
           query.prepare("INSERT INTO Registro (Nome, Senha, CPF, email) VALUES (:Nome, :Senha, :CPF, :email)");
           query.bindValue(":Nome", Nome);
@@ -81,12 +73,7 @@ class BDcontroll{
 
 
         qDebug() << "CARREGANDO LISTA";
-        db.setHostName("tyrprint.com");
-        db.setPort(3306);
-        db.setDatabaseName("tyrpr956_agendaDb");
-        db.setUserName("tyrpr956_oxum");
-        db.setPassword("agoravai");
-        db.open();
+        conectar();
 
         query.exec("SELECT titulo, data, local, hora FROM compromisso");
         while (query.next()) {
@@ -101,12 +88,7 @@ class BDcontroll{
     }
 
     void deletarcompromisso(QString T){
-        db.setHostName("tyrprint.com");
-        db.setPort(3306);
-        db.setDatabaseName("tyrpr956_agendaDb");
-        db.setUserName("tyrpr956_oxum");
-        db.setPassword("agoravai");
-        db.open();
+        conectar();
 
         query.prepare("DELETE FROM compromisso WHERE titulo = ':titulo'");
         query.bindValue(':id', T);

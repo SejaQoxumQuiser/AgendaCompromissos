@@ -7,7 +7,6 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QSqlDatabase>
-#include "bdcontroll.h"
 #include <cstdlib>
 #include <iostream>
 
@@ -37,11 +36,13 @@ void MainWindow::on_pushButton_clicked()//login
     QString name,pasw;
     name = ui->login->text();
     pasw = ui->senha->text();
+    BDcontroll banco;
+    banco.conectar();
 
     QSqlQuery qry;
 
 
-    qry.prepare("SELECT senha FROM Registro WHERE email = ?");
+    qry.prepare("SELECT Senha from tyrpr956_agendaDb.Registro;");
     qry.addBindValue(name);
     qry.exec();
 
@@ -50,7 +51,8 @@ void MainWindow::on_pushButton_clicked()//login
     qDebug () << qry.value(0).toString();
 
     if(name.isEmpty() || pasw.isEmpty()){
-        qDebug() << "Digite alguma coisa";
+        QString msg = "Tente de novo";
+        QMessageBox::warning(this,"Empty",msg);
     }
     else{
         if(qry.value(0).toString() == pasw){
@@ -62,8 +64,8 @@ void MainWindow::on_pushButton_clicked()//login
           }
 
         else{
-                QString msg = "Tente de novo";
-                QMessageBox::warning(this,"Login ou Senha errado",msg);
+                QString msg = "Login ou Senha errado!!";
+                QMessageBox::warning(this,"Tente de novo",msg);
                 ui->login->setText("");
                 ui->senha->setText("");
       }
