@@ -9,7 +9,7 @@
 #include <QTime>
 #include <QTimeEdit>
 #include "compromisso.h"
-
+#include "ldde.h"
 
 
 
@@ -19,7 +19,7 @@ namespace Ui {
 class BDcontroll{
    public:
     BDcontroll();
-
+    ldde Lista;
 
     void adicionarCompromisso(QString titulo, QString local, QString comentario, QString data, QString hora){
 
@@ -94,13 +94,23 @@ class BDcontroll{
             QString data = query.value(1).toString();
             QString local = query.value(2).toString();
             QString hora = query.value(3).toString();
-            //QString comentario = query.value(4).toString();
             compromisso meuCompromisso(titulo, data, local, hora);
-            //qDebug() << titulo << data << local << hora ;
             Lista.inserir(meuCompromisso);
-            Lista.imprimir();
-        }
 
+        }
+    }
+
+    void deletarcompromisso(QString T){
+        db.setHostName("tyrprint.com");
+        db.setPort(3306);
+        db.setDatabaseName("tyrpr956_agendaDb");
+        db.setUserName("tyrpr956_oxum");
+        db.setPassword("agoravai");
+        db.open();
+
+        query.prepare("DELETE FROM compromisso WHERE titulo = ':titulo'");
+        query.bindValue(':id', T);
+        query.exec();
     }
 
 

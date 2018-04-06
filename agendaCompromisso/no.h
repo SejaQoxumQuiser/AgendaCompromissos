@@ -6,13 +6,12 @@
 
 class No
 {
-public:
-    //iago salva patria
+public:    
     No * prox;
     No * ant;
     compromisso valor;
-
     No(compromisso T);
+
 private:
 
 };

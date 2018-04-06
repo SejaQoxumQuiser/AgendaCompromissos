@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include "calendariocompromissos.h"
-#include "mainwindow.h"
+
 
 
 

@@ -6,12 +6,10 @@
 #include <QString>
 #include <QDebug>
 #include <QMessageBox>
-#include <QMainWindow>
 #include <QSqlDatabase>
 #include "bdcontroll.h"
 #include <cstdlib>
 #include <iostream>
-#include <QSqlRelationalTableModel>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -42,26 +40,20 @@ void MainWindow::on_pushButton_clicked()//login
 
     QSqlQuery qry;
 
+
     qry.prepare("SELECT senha FROM Registro WHERE email = ?");
     qry.addBindValue(name);
     qry.exec();
 
-    if(name == "test" && pasw == "teste")//name == ? && senha == ?
-    {
     qDebug () << qry.value(0).toString();
-          qry.first();
-
-    if(name == "test" && pasw == "test"){
+          qry.first();    
     qDebug () << qry.value(0).toString();
-        qry.first();
 
-        if(qry.next()){
-
-   // if(qry.exec("SELECT Nome, Senha, Role FROM Registro WHERE Nome=\'" + name + 
-              //  "\' AND Senha=\'" + pasw +"'\'" )) // arrumar
-    {
-        if(qry.next()){
-
+    if(name.isEmpty() || pasw.isEmpty()){
+        qDebug() << "Digite alguma coisa";
+    }
+    else{
+        if(qry.value(0).toString() == pasw){
             QString msg = "Login realisado com sucesso!!";
             QMessageBox::warning(this,"Login was Sucessful",msg);
             hide();
@@ -74,15 +66,8 @@ void MainWindow::on_pushButton_clicked()//login
                 QMessageBox::warning(this,"Login ou Senha errado",msg);
                 ui->login->setText("");
                 ui->senha->setText("");
-
       }
-    }
-  }
+   }
 }
-        }else{
-            QString msg = "Tente de novo";
-            QMessageBox::warning(this,"Login ou Senha errado",msg);
-            ui->login->setText("");
-            ui->senha->setText("");
-        }
-    }
+
+

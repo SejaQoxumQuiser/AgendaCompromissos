@@ -30,8 +30,8 @@ SOURCES += \
     calendariocompromissos.cpp \
     registrarcompromisso.cpp \
     bdcontroll.cpp \
-    no.cpp \
     ldde.cpp \
+    no.cpp \
     compromisso.cpp
 
 HEADERS += \
@@ -40,8 +40,8 @@ HEADERS += \
     calendariocompromissos.h \
     registrarcompromisso.h \
     bdcontroll.h \
-    no.h \
     ldde.h \
+    no.h \
     compromisso.h
 
 FORMS += \

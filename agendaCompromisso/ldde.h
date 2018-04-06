@@ -8,8 +8,6 @@
 
 class ldde
 {
-private:
-// xungles
 public:
     No* primeiro;
     No* ultimo;
