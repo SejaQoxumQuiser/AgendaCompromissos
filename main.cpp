@@ -43,6 +43,51 @@ public:
     friend class Ldde<T>;
 };
 template <typename T>
+
+class Fde{
+private:
+    int i,f,n;
+    T*v;
+public:
+    Fde(int n) : i(0), f(0), n(n), v(new T[n]) {}
+    Fde() : i(0), f(0), n(100), v(new T[100]) {}
+
+    ~Fde() {
+        delete []v;
+    }
+
+public:
+    bool enfileira(T valor){
+        //fila cheia
+        if((f+1)%n == i)
+            return false;
+
+        v[f] = valor;
+        f++;
+        return true;
+    }
+    bool desenfileira(T &valor){
+        //fila vazia
+        if(i==f)
+            return false;
+
+        valor = v[i];
+        i++;
+        return true;
+    }
+    void apagar(){
+        i=f=0;
+    }
+    void imprimir(){
+        while (i != f){
+            cout<<v[i]<<" "<<endl;
+            i++;
+        }
+
+    }
+};
+
+template <typename T>
 class Ldde{
     private:
         No<T>* primeiro;
@@ -221,10 +266,9 @@ ostream& operator<< (ostream& out, const No<T>* val){
 }
 
 int main(int argc, char *argv[]){
+    //QApplication a(argc, argv);
+    //QMainWindow w;
+    //w.show();
 
-    QApplication a(argc, argv);
-    QMainWindow w;
-    w.show();
-
-    return a.exec();
+    return 0;//a.exec();
 }
