@@ -88,7 +88,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Voltar</string>
+    <string>Fechar</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">

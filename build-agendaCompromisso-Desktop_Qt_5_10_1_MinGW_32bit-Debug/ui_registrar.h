@@ -89,7 +89,7 @@ public:
         label_3->setText(QApplication::translate("registrar", "Senha", nullptr));
         label_4->setText(QApplication::translate("registrar", "CPF", nullptr));
         label_5->setText(QApplication::translate("registrar", "E-mail", nullptr));
-        pushButton->setText(QApplication::translate("registrar", "Voltar", nullptr));
+        pushButton->setText(QApplication::translate("registrar", "Fechar", nullptr));
         pushButton_2->setText(QApplication::translate("registrar", "Registrar", nullptr));
     } // retranslateUi
 
