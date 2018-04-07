@@ -11,7 +11,7 @@ telinhaBuscar::telinhaBuscar(QWidget *parent) :
 
     BDcontroll Banco;
     Banco.carregarPessoas();
-    for(int i = 0 ; i<=100; i++){
+    for(int i = 0 ; i<=99; i++){
             ui->listWidget->addItem(Banco.Fila.v[i].nome + ' ' + Banco.Fila.v[i].email );
     }
 }
