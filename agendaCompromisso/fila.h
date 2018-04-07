@@ -10,11 +10,11 @@ class fila
 public:
     fila();
     int i,f,n;
-    pessoa *v[100];
-    bool enfileira(pessoa *T);
+    pessoa *v;
+    bool enfileira(pessoa T);
     bool desenfileira();
     void imprimir();
-    pessoa *buscar(QString T);
+    void buscar(QString T);
 };
 
 #endif // FILA_H

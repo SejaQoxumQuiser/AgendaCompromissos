@@ -6,9 +6,10 @@
 class pessoa
 {
 public:
+    QString nome,email;
     pessoa();
     pessoa(QString nome, QString email);
-    QString nome,email;
+
 };
 
 #endif // PESSOA_H

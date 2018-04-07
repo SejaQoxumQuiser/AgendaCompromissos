@@ -99,9 +99,10 @@ class BDcontroll{
         query.exec("SELECT nome, email FROM tyrpr956_agendaDb.Registro");
         while(query.next()){
             pessoa Pessoa(query.value(0).toString(), query.value(1).toString());
-            qDebug() << query.value(0).toString() << query.value(1).toString();
+           // qDebug() << query.value(0).toString() << query.value(1).toString();
             Fila.enfileira(Pessoa);
         }
+        Fila.imprimir();
     }
 
 

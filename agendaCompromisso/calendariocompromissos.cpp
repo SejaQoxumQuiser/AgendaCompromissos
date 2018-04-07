@@ -78,11 +78,10 @@ void calendarioCompromissos::on_remover_clicked()
 
 void calendarioCompromissos::on_pushButton_clicked()
 {
-   // hide();
+    hide();
     BDcontroll banco;
-    banco.carregarPessoas();
-    banco.Fila.imprimir();
-  //  telinhaBuscar telaBuscar;
-  //  telaBuscar.setModal(true);
-  //  telaBuscar.exec();
+    banco.carregarPessoas();   
+    telinhaBuscar telaBuscar;
+    telaBuscar.setModal(true);
+    telaBuscar.exec();
 }
