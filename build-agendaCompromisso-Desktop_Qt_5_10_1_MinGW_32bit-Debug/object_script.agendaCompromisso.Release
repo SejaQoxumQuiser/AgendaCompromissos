@@ -8,8 +8,12 @@ INPUT(
 ./release\ldde.o
 ./release\no.o
 ./release\compromisso.o
+./release\pessoa.o
+./release\fila.o
+./release\telinhabuscar.o
 ./release\moc_mainwindow.o
 ./release\moc_registrar.o
 ./release\moc_calendariocompromissos.o
 ./release\moc_registrarcompromisso.o
+./release\moc_telinhabuscar.o
 );
