@@ -42,7 +42,7 @@ void MainWindow::on_pushButton_clicked()//login
     QSqlQuery qry;
 
 
-    qry.prepare("SELECT Senha from tyrpr956_agendaDb.Registro;");
+    qry.prepare("SELECT Senha from tyrpr956_agendaDb.Registro WHERE email = ?");
     qry.addBindValue(name);
     qry.exec();
 

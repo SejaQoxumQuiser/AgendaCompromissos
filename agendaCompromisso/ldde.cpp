@@ -1,4 +1,5 @@
 #include "ldde.h"
+#include "bdcontroll.h"
 #include <QDebug>
 
 
@@ -30,8 +31,7 @@ bool ldde::inserir(compromisso T){
         ultimo = novoNo;
 
     novoNo->ant = antesNo;
-    novoNo->prox = depoisNo;
-
+    novoNo->prox = depoisNo;  
 
     return true;
 
@@ -42,10 +42,12 @@ No* ldde::buscar(QString T){
     while(atual){
         if(atual->valor.titulo == T){
              return atual;
+             qDebug() << "ACHOU";
        }
         else
             atual = atual->prox;
     }
+    qDebug() << " NAO ACHOU";
 }
 
 bool ldde::remover(QString T){
@@ -64,6 +66,9 @@ bool ldde::remover(QString T){
 
     if(depoisNoB)
         depoisNoB = antesNoB;
+
+    BDcontroll Banco;
+    Banco.deletarcompromisso(T);
 
     delete b;
     return true;

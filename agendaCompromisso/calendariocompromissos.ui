@@ -39,7 +39,7 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>80</x>
      <y>220</y>
      <width>75</width>
      <height>23</height>
@@ -217,6 +217,19 @@
    </property>
    <property name="text">
     <string>Remover</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>220</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Pesquisar</string>
    </property>
   </widget>
  </widget>

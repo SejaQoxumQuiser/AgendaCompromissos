@@ -10,6 +10,7 @@
 #include <QTimeEdit>
 #include "compromisso.h"
 #include "ldde.h"
+#include "fila.h"
 
 
 
@@ -20,6 +21,7 @@ class BDcontroll{
    public:
     BDcontroll();
     ldde Lista;
+    fila Fila;
 
     void conectar(){
 
@@ -70,11 +72,8 @@ class BDcontroll{
     }
 
     void carregarLista(){
-
-
         qDebug() << "CARREGANDO LISTA";
         conectar();
-
         query.exec("SELECT titulo, data, local, hora FROM compromisso");
         while (query.next()) {
             QString titulo = query.value(0).toString();
@@ -87,12 +86,22 @@ class BDcontroll{
         }
     }
 
-    void deletarcompromisso(QString T){
+    void deletarcompromisso(QString titulo){
         conectar();
-
-        query.prepare("DELETE FROM compromisso WHERE titulo = ':titulo'");
-        query.bindValue(':id', T);
+        qDebug() << "deletando";
+        query.prepare("DELETE FROM compromisso WHERE titulo = ?");
+        query.addBindValue(titulo);
         query.exec();
+    }
+
+    void carregarPessoas(){
+        conectar();
+        query.exec("SELECT nome, email FROM tyrpr956_agendaDb.Registro");
+        while(query.next()){
+            pessoa Pessoa(query.value(0).toString(), query.value(1).toString());
+            qDebug() << query.value(0).toString() << query.value(1).toString();
+            Fila.enfileira(Pessoa);
+        }
     }
 
 

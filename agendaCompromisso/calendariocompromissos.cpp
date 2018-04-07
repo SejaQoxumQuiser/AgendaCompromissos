@@ -5,6 +5,8 @@
 #include <QString>
 #include "bdcontroll.h"
 #include <QTime>
+#include "telinhabuscar.h"
+
 
 using namespace std;
 
@@ -65,8 +67,22 @@ void calendarioCompromissos::on_remover_clicked()
     banco.carregarLista();
     QRegExp tagExp(" ");
     QStringList query = ui->listWidget->currentItem()->text().split(tagExp);
-    qDebug() << ui->listWidget->currentItem()->text();
-    qDebug() << query;
+    // qDebug() << ui->listWidget->currentItem()->text();
+    qDebug() << query.at(0);
     banco.Lista.remover(query.at(0));
+    // banco.deletarcompromisso(query.at(0));
+
+    banco.Lista.imprimir();
     calendarioCompromissos::mostrarLista();
+}
+
+void calendarioCompromissos::on_pushButton_clicked()
+{
+   // hide();
+    BDcontroll banco;
+    banco.carregarPessoas();
+    banco.Fila.imprimir();
+  //  telinhaBuscar telaBuscar;
+  //  telaBuscar.setModal(true);
+  //  telaBuscar.exec();
 }
