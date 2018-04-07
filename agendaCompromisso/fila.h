@@ -14,7 +14,7 @@ public:
     bool enfileira(pessoa T);
     bool desenfileira();
     void imprimir();
-    void buscar(QString T);
+    bool buscar(QString T);
 };
 
 #endif // FILA_H

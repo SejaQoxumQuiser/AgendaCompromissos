@@ -21,12 +21,13 @@ bool fila::enfileira(pessoa T){
   return true;
 }
 
-void fila::buscar(QString T){
+bool fila::buscar(QString T){
     for (int i = 0; i <= 10; i++){
         if (v[i].nome == T){
-            //return v[i];
+            return true;
         }
     }
+    return false;
  }
 
 void fila::imprimir(){

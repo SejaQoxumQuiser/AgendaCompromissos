@@ -32,7 +32,10 @@ SOURCES += \
     bdcontroll.cpp \
     ldde.cpp \
     no.cpp \
-    compromisso.cpp
+    compromisso.cpp \
+    fila.cpp \
+    pessoa.cpp \
+    telinhabuscar.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -42,24 +45,22 @@ HEADERS += \
     bdcontroll.h \
     ldde.h \
     no.h \
-    compromisso.h
+    compromisso.h \
+    fila.h \
+    pessoa.h \
+    telinhabuscar.h
 
 FORMS += \
         mainwindow.ui \
     registrar.ui \
     registrar.ui \
     calendariocompromissos.ui \
-    registrarcompromisso.ui
+    registrarcompromisso.ui \
+    telinhabuscar.ui
+
 
 
 win32: LIBS += -L$$PWD/../../../../../Desktop/lib/ -llibmysql
 
 INCLUDEPATH += $$PWD/../../../../../Desktop
 DEPENDPATH += $$PWD/../../../../../Desktop
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../wamp64/bin/mysql/mysql5.7.14/lib/ -llibmysql
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../wamp64/bin/mysql/mysql5.7.14/lib/ -llibmysqld
-else:unix: LIBS += -L$$PWD/../../../../../../wamp64/bin/mysql/mysql5.7.14/lib/ -llibmysql
-
-INCLUDEPATH += $$PWD/../../../../../../wamp64/bin/mysql/mysql5.7.14
-DEPENDPATH += $$PWD/../../../../../../wamp64/bin/mysql/mysql5.7.14

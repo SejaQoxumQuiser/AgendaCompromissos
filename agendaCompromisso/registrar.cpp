@@ -27,9 +27,9 @@ void registrar::on_pushButton_2_clicked()//cadastro
     QString CPF = ui->lineEdit_3->text();
     QString email = ui->lineEdit_4->text();
     banco.adicionarRegistro(Nome, Senha, CPF, email);
-     hide();
-     calendario = new calendarioCompromissos(this);
-     calendario->show();
+    hide();
+    calendario = new calendarioCompromissos(this);
+    calendario->show();
 
 }
 
