@@ -35,7 +35,7 @@ public:
         telinhaBuscar->resize(400, 300);
         pushButton = new QPushButton(telinhaBuscar);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(140, 240, 75, 23));
+        pushButton->setGeometry(QRect(150, 240, 75, 23));
         lineEdit = new QLineEdit(telinhaBuscar);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
         lineEdit->setGeometry(QRect(130, 210, 113, 20));

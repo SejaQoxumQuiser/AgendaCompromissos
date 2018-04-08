@@ -8,8 +8,8 @@ INPUT(
 ./release\ldde.o
 ./release\no.o
 ./release\compromisso.o
-./release\pessoa.o
 ./release\fila.o
+./release\pessoa.o
 ./release\telinhabuscar.o
 ./release\moc_mainwindow.o
 ./release\moc_registrar.o

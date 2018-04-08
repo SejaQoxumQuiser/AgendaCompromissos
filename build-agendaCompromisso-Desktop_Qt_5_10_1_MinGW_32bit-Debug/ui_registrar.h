@@ -29,7 +29,6 @@ public:
     QLabel *label_3;
     QLabel *label_4;
     QLabel *label_5;
-    QPushButton *pushButton;
     QPushButton *pushButton_2;
     QLineEdit *lineEdit;
     QLineEdit *lineEdit_2;
@@ -56,12 +55,9 @@ public:
         label_5 = new QLabel(registrar);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(30, 170, 47, 13));
-        pushButton = new QPushButton(registrar);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(100, 250, 75, 23));
         pushButton_2 = new QPushButton(registrar);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(190, 250, 75, 23));
+        pushButton_2->setGeometry(QRect(100, 200, 75, 23));
         lineEdit = new QLineEdit(registrar);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
         lineEdit->setGeometry(QRect(90, 80, 113, 20));
@@ -89,7 +85,6 @@ public:
         label_3->setText(QApplication::translate("registrar", "Senha", nullptr));
         label_4->setText(QApplication::translate("registrar", "CPF", nullptr));
         label_5->setText(QApplication::translate("registrar", "E-mail", nullptr));
-        pushButton->setText(QApplication::translate("registrar", "Fechar", nullptr));
         pushButton_2->setText(QApplication::translate("registrar", "Registrar", nullptr));
     } // retranslateUi
 

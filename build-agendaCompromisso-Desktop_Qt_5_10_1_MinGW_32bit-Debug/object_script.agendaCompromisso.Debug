@@ -8,8 +8,8 @@ INPUT(
 ./debug\ldde.o
 ./debug\no.o
 ./debug\compromisso.o
-./debug\pessoa.o
 ./debug\fila.o
+./debug\pessoa.o
 ./debug\telinhabuscar.o
 ./debug\moc_mainwindow.o
 ./debug\moc_registrar.o

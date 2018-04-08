@@ -44,8 +44,10 @@ public:
     QLabel *label_5;
     QTimeEdit *timeEdit;
     QLabel *label_3;
+    QLabel *label;
     QListWidget *listWidget;
     QPushButton *remover;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *calendarioCompromissos)
     {
@@ -60,7 +62,7 @@ public:
         MES->setGeometry(QRect(380, 70, 151, 16));
         pushButton_2 = new QPushButton(calendarioCompromissos);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(120, 220, 75, 23));
+        pushButton_2->setGeometry(QRect(80, 220, 75, 23));
         groupBox = new QGroupBox(calendarioCompromissos);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setEnabled(true);
@@ -99,12 +101,18 @@ public:
         label_3 = new QLabel(groupBox);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(20, 50, 47, 13));
+        label = new QLabel(groupBox);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(190, 20, 91, 16));
         listWidget = new QListWidget(calendarioCompromissos);
         listWidget->setObjectName(QStringLiteral("listWidget"));
         listWidget->setGeometry(QRect(330, 30, 401, 192));
         remover = new QPushButton(calendarioCompromissos);
         remover->setObjectName(QStringLiteral("remover"));
         remover->setGeometry(QRect(480, 230, 75, 23));
+        pushButton = new QPushButton(calendarioCompromissos);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(170, 220, 75, 23));
 
         retranslateUi(calendarioCompromissos);
 
@@ -123,7 +131,9 @@ public:
         label_4->setText(QApplication::translate("calendarioCompromissos", "Local", nullptr));
         label_5->setText(QApplication::translate("calendarioCompromissos", "Comentarios", nullptr));
         label_3->setText(QApplication::translate("calendarioCompromissos", "Data", nullptr));
+        label->setText(QApplication::translate("calendarioCompromissos", "Titulo sem espa\303\247o", nullptr));
         remover->setText(QApplication::translate("calendarioCompromissos", "Remover", nullptr));
+        pushButton->setText(QApplication::translate("calendarioCompromissos", "Pesquisar", nullptr));
     } // retranslateUi
 
 };
