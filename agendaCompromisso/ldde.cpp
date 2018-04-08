@@ -60,12 +60,14 @@ bool ldde::remover(QString T){
     No* depoisNoB = b->prox;
 
     if(antesNoB)
-        antesNoB=depoisNoB;
+        antesNoB->prox =depoisNoB;
     else
         primeiro = depoisNoB;
 
     if(depoisNoB)
-        depoisNoB = antesNoB;
+        depoisNoB->ant = antesNoB;
+    else
+        ultimo = antesNoB;
 
     BDcontroll Banco;
     Banco.deletarcompromisso(T);

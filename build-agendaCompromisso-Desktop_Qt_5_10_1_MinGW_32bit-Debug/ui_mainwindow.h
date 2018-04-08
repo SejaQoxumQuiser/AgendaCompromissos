@@ -58,6 +58,7 @@ public:
         senha = new QLineEdit(centralWidget);
         senha->setObjectName(QStringLiteral("senha"));
         senha->setGeometry(QRect(140, 160, 113, 20));
+        senha->setEchoMode(QLineEdit::Password);
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(90, 230, 75, 23));

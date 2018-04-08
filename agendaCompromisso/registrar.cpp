@@ -30,12 +30,6 @@ void registrar::on_pushButton_2_clicked()//cadastro
     hide();
     calendario = new calendarioCompromissos(this);
     calendario->show();
-
-}
-
-
-void registrar::on_pushButton_clicked()//Fechar
-{
     this->close();
     qDebug() << "De o run novamente por favor ";
 
